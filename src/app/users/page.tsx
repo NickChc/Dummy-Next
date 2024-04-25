@@ -1,5 +1,23 @@
+import { PageHeader } from "@/app/_components/PageHeader";
 
+async function getUsers() {
+  try {
+    const response = await fetch(
+      `${process.env.DUMMY_API_URL}/users?limit=100`
+    );
+    const data = await response.json();
+    return data.users;
+  } catch (error: any) {
+    console.log(error.message);
+  }
+}
 
-export default function UsersPage() {
-    return <></>
+export default async function UsersPage() {
+    const users = await getUsers()
+
+  return (
+    <>
+      <PageHeader>USERS</PageHeader>
+    </>
+  );
 }
