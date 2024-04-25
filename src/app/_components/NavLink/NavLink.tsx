@@ -14,7 +14,7 @@ export function NavLink({ title, path }: NavLinkProps) {
   return (
     <Link
       className={`font-bold text-3xl ${
-        pathname.includes(path) && "opacity-50"
+        pathname.endsWith(path) && "opacity-50"
       }`}
       href={path}
     >
