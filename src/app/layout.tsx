@@ -1,21 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Inter as FontSans } from "next/font/google";
+import "@/app/globals.css";
+import { cn } from "@/lib/utils";
+import { PropsWithChildren } from "react";
+import { Navigation } from "@/app/_components/Navigation";
 
 export const metadata: Metadata = {
   title: "Dummy Next",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "w-full min-h-dvh flex flex-col items-center bg-muted-foreground text-foreground font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }
