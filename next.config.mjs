@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["robohash.org"],
+    remotePatterns: [
+      {
+        hostname: "robohash.org",
+      },
+    ],
   },
 };
 

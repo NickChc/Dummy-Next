@@ -24,7 +24,12 @@ export default async function UserPage({ params: { userId } }: UserPageProps) {
     <>
       <div className="flex flex-col md:flex-row items-stretch gap-x-3 my-9 w-full md:justify-center">
         <div className="relative w-[50%] sm:w-auto sm:min-w-80 aspect-square z-0 overflow-hidden self-center">
-          <Image src={user.image} alt={`Image of ${user.username}`} fill sizes="100" />
+          <Image
+            src={user.image}
+            alt={`Image of ${user.username}`}
+            fill
+            sizes="100"
+          />
         </div>
         <div className="text-center sm:text-left">
           <div className="border-solid border border-black border-x-0 border-t-0 first:border-t-0 last:border-b-0 p-1 px-2">
@@ -60,7 +65,7 @@ export default async function UserPage({ params: { userId } }: UserPageProps) {
           </div>
         </div>
       </div>
-      <div className="w-3/4 flex flex-col gap-y-4 ">
+      <div className="w-3/4 flex flex-col gap-y-4 pb-14">
         <hr className="w-3/4 self-center my-9" />
         {userPosts.length === 0 ? (
           <h1>{user.username} has no posts yet.</h1>

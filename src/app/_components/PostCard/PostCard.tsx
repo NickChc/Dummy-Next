@@ -27,7 +27,12 @@ export function PostCard({ post, user }: PostCardProps) {
               width={50}
               height={50}
             />
-            <Link className="underline font-semibold text-lg" href={`users/${user.id}`}>{user.username}</Link>
+            <Link
+              className="underline font-semibold text-lg"
+              href={`users/${user.id}`}
+            >
+              {user.username}
+            </Link>
           </div>
           <CardTitle>{post.title}</CardTitle>
         </CardHeader>
@@ -40,7 +45,11 @@ export function PostCard({ post, user }: PostCardProps) {
           <LikeButton reactions={post.reactions} postId={post.id} />
           <div className="flex gap-x-3 ">
             {post.tags.map((tag) => {
-              return <div key={tag}>{tag}</div>;
+              return (
+                <Link key={tag} href={`/posts/${tag}`} className="underline">
+                  {tag}
+                </Link>
+              );
             })}
           </div>
         </div>
