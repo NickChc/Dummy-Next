@@ -19,7 +19,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <body
         className={cn(
-          "w-full min-h-dvh flex flex-col items-center bg-muted-foreground text-foreground font-sans antialiased",
+          "w-full min-h-dvh flex flex-col items-center bg-muted-foreground text-foreground font-sans antialiased relative",
           fontSans.variable
         )}
       >

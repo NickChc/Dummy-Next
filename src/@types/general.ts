@@ -11,6 +11,7 @@ export interface TUser {
   id: number;
   username: string;
   image: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
+  age: number;
 }
