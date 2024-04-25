@@ -22,3 +22,13 @@ export interface TUser {
     city: string;
   };
 }
+
+export interface TComment {
+  id: number;
+  body: string;
+  postId: number;
+  user: {
+    id: number;
+    username: string;
+  };
+}

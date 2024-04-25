@@ -9,6 +9,7 @@ import {
 import { LikeButton } from "@/app/_components/PostCard/LikeButton";
 import Link from "next/link";
 import Image from "next/image";
+import { ViewMoreLink } from "@/app/_components/PostCard/ViewMoreLink";
 
 interface PostCardProps {
   post: TPost;
@@ -28,8 +29,9 @@ export function PostCard({ post, user }: PostCardProps) {
               height={50}
             />
             <Link
+              replace
               className="underline font-semibold text-lg"
-              href={`users/${user.id}`}
+              href={`/users/${user.id}`}
             >
               {user.username}
             </Link>
@@ -54,6 +56,9 @@ export function PostCard({ post, user }: PostCardProps) {
           </div>
         </div>
       </CardFooter>
+      <div className="w-full flex px-6 justify-end">
+        <ViewMoreLink postId={post.id} />
+      </div>
     </Card>
   );
 }
