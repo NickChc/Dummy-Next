@@ -13,5 +13,12 @@ export interface TUser {
   image: string;
   firstName: string;
   lastName: string;
+  maidenName: string;
   age: number;
+  birthDate: Date;
+  email: string;
+  phone: string;
+  address: {
+    city: string;
+  };
 }
