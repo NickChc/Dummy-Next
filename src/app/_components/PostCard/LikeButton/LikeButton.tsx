@@ -39,7 +39,7 @@ export function LikeButton({ postId, reactions }: LikeButtonProps) {
 
   return (
     <>
-      <div className="flex items-center gap-x-3 select-none">
+      <div className="flex items-center gap-x-3 select-none whitespace-nowrap">
         Likes -{" "}
         <span className="min-w-[1.4rem] font-semibold text-lg">
           {isLiked ? reactions + 1 : reactions}

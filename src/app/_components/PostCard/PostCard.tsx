@@ -18,8 +18,8 @@ interface PostCardProps {
 
 export function PostCard({ post, user }: PostCardProps) {
   return (
-    <Card>
-      <div className="flex-grow min-h-80 h-[80%]">
+    <Card className="relative">
+      <div className="flex-grow min-h-80 h-[75%]">
         <CardHeader>
           <div>
             <Image
@@ -43,20 +43,19 @@ export function PostCard({ post, user }: PostCardProps) {
         </CardContent>
       </div>
       <CardFooter>
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between pt-4">
-          <LikeButton reactions={post.reactions} postId={post.id} />
-          <div className="flex gap-x-3 truncate">
-            {post.tags.map((tag) => {
-              return (
-                <Link key={tag} href={`/posts/${tag}`} className="underline">
-                  {tag}
-                </Link>
-              );
-            })}
-          </div>
+        <div className="w-full flex items-center justify-between mt-9">
+          {post.tags.map((tag) => {
+            return (
+              <Link key={tag} href={`/posts/${tag}`} className="underline m-1">
+                {tag}
+              </Link>
+            );
+          })}
         </div>
       </CardFooter>
-      <div className="w-full flex px-6 justify-end">
+      <div className="w-full flex px-6 justify-between absolute bottom-2 right-1">
+        <LikeButton reactions={post.reactions} postId={post.id} />
+
         <ViewMoreLink postId={post.id} />
       </div>
     </Card>
