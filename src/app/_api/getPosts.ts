@@ -1,6 +1,6 @@
 export async function getPosts(
   userId?: number,
-  tagName?: string,
+  keyWord?: string,
   postId?: number
 ) {
   try {
@@ -9,9 +9,9 @@ export async function getPosts(
       response = await fetch(
         `${process.env.DUMMY_API_URL}/posts/user/${userId}`
       );
-    } else if (tagName) {
+    } else if (keyWord) {
       response = await fetch(
-        `${process.env.DUMMY_API_URL}/posts/search?q=${tagName}`
+        `${process.env.DUMMY_API_URL}/posts/search?q=${keyWord}`
       );
     } else if (postId) {
       response = await fetch(`${process.env.DUMMY_API_URL}/posts/${postId}`);

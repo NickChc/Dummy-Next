@@ -65,10 +65,12 @@ export default async function UserPage({ params: { userId } }: UserPageProps) {
           </div>
         </div>
       </div>
-      <div className="w-3/4 flex flex-col gap-y-4 pb-14">
+      <div className="w-full sm:w-3/4 flex flex-col gap-y-4 pb-14">
         <hr className="w-3/4 self-center my-9" />
         {userPosts.length === 0 ? (
-          <h1>{user.username} has no posts yet.</h1>
+          <h1 className="self-center whitespace-nowrap text-xl sm:text-2xl md:text-3xl font-semibold">
+            {user.username} has no posts yet.
+          </h1>
         ) : (
           userPosts.map((post) => {
             return <PostCard key={post.id} post={post} user={user} />;

@@ -43,9 +43,9 @@ export function PostCard({ post, user }: PostCardProps) {
         </CardContent>
       </div>
       <CardFooter>
-        <div className="w-full flex items-center justify-between pt-4">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between pt-4">
           <LikeButton reactions={post.reactions} postId={post.id} />
-          <div className="flex gap-x-3 ">
+          <div className="flex gap-x-3 truncate">
             {post.tags.map((tag) => {
               return (
                 <Link key={tag} href={`/posts/${tag}`} className="underline">

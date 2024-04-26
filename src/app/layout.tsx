@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
 import { PropsWithChildren } from "react";
 import { Navigation } from "@/app/_components/Navigation";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dummy Next",

@@ -16,7 +16,7 @@ export default function HomePage() {
           <CardTitle>Welcome to Dummy Next</CardTitle>
         </CardHeader>
         <CardContent>
-          <CardDescription>
+          <CardDescription className="text-lg">
             This app is my introduction to next.js It showcases general features
             of Next like SSR and routing. This is me just getting started with
             next. So, there will be more :D
