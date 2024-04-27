@@ -27,7 +27,7 @@ export function LangSelect({ lang }: LangSelectProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="font-semibold bg-black text-white rounded-lg p-2">
+      <DropdownMenuTrigger className="font-semibold bg-black dark:bg-blue-900 text-white rounded-lg p-2">
         {lang.toUpperCase()}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ml-1">

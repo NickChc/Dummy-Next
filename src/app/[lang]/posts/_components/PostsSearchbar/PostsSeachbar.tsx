@@ -5,15 +5,21 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "next/navigation";
+import { Locale } from "../../../../../../i18n.config";
 
-export function PostsSearchbar() {
+interface PostsSearchbarProps {
+  lang: Locale;
+  text: string;
+}
+
+export function PostsSearchbar({ lang, text }: PostsSearchbarProps) {
   const [keyWord, setKeyWord] = useState<string>("");
   const router = useRouter();
   const searchParams = useSearchParams();
 
   function handleSearch() {
     if (keyWord.trim() === "") return;
-    router.push(`/posts?search=${encodeURIComponent(keyWord)}`);
+    router.push(`/${lang}/posts?search=${encodeURIComponent(keyWord)}`);
   }
 
   useEffect(() => {
@@ -31,7 +37,7 @@ export function PostsSearchbar() {
         onChange={(e) => setKeyWord(e.target.value)}
       />
       <Button className="rounded-l-none" onClick={handleSearch}>
-        Search
+        {text}
       </Button>
     </div>
   );

@@ -2,11 +2,41 @@
   "page": {
     "home": {
       "home": "HOME"
+    },
+    "tagNamePosts": {
+      "postsAbout": "POSTS ABOUT"
+    },
+    "users": {
+      "users": "USERS"
+    },
+    "postId": {
+      "username": "Username",
+      "fullName": "Full Name",
+      "age": "Age",
+      "email": "Email",
+      "phone": "Phone",
+      "livesIn": "Lives In",
+      "noPostsYet": "has no posts yet"
+    },
+    "posts": {
+      "posts": "POSTS",
+      "backToAllPosts": "Back To All Posts",
+      "search": "Search"
     }
   },
   "navigation": {
     "home": "Home",
     "posts": "Posts",
     "users": "Users"
+  },
+  "components": {
+    "likes": "Likes",
+    "viewMore": "View More",
+    "userCard": {
+      "username": "Username",
+      "name": "Name",
+      "surname": "Surname",
+      "age": "Age"
+    }
   }
 }

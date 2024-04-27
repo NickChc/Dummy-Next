@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 interface LikeButtonProps {
   postId: number;
   reactions: number;
+  text: string;
 }
 
-export function LikeButton({ postId, reactions }: LikeButtonProps) {
+export function LikeButton({ postId, reactions, text }: LikeButtonProps) {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   function toggleLike() {
@@ -40,7 +41,7 @@ export function LikeButton({ postId, reactions }: LikeButtonProps) {
   return (
     <>
       <div className="flex items-center gap-x-3 select-none whitespace-nowrap">
-        Likes -{" "}
+        {text} -{" "}
         <span className="min-w-[1.4rem] font-semibold text-lg">
           {isLiked ? reactions + 1 : reactions}
         </span>{" "}

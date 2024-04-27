@@ -2,11 +2,41 @@
   "page": {
     "home": {
       "home": "მთავარი"
+    },
+    "tagNamePosts": {
+      "postsAbout": "პოსტები"
+    },
+    "users": {
+      "users": "მომხმარებლები"
+    },
+    "postId": {
+      "username": "მეტსახელი",
+      "fullName": "სრული სახელი",
+      "age": "ასაკი",
+      "email": "ელ. ფოსტა",
+      "phone": "ტელეფონი",
+      "livesIn": "ქალაქი",
+      "noPostsYet": "-ს ჯერ აქ აქვს პოსტები"
+    },
+    "posts": {
+      "posts": "პოსტები",
+      "backToAllPosts": "ყველა პოსტზე დაბრუნება",
+      "search": "ძიება"
     }
   },
   "navigation": {
     "home": "მთავარი",
     "posts": "პოსტები",
     "users": "ხალხი"
+  },
+  "components": {
+    "likes": "ლაიქები",
+    "viewMore": "იხილეთ მეტი",
+    "userCard": {
+      "username": "მეტსახელი",
+      "name": "სახელი",
+      "surname": "გვარი",
+      "age": "ასაკი"
+    }
   }
 }

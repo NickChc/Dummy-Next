@@ -7,27 +7,37 @@ import { Suspense } from "react";
 import { PostsSearchbar } from "@/app/[lang]/posts/_components/PostsSearchbar";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { Locale } from "../../../../i18n.config";
+import { getDictionaries } from "@/lib/dictionary";
 
 interface HomeProps {
   searchParams: {
     search: string;
   };
+  params: {
+    lang: Locale;
+  };
 }
 
-export default function Home({ searchParams }: HomeProps) {
+export default async function Home({
+  searchParams,
+  params: { lang },
+}: HomeProps) {
+  const { page } = await getDictionaries(lang);
+
   return (
     <>
-      <PageHeader>POSTS</PageHeader>
-      <PostsSearchbar />
+      <PageHeader>{page.posts.posts}</PageHeader>
+      <PostsSearchbar lang={lang} text={page.posts.search} />
       {searchParams.search && (
         <Link
-          href={"/posts"}
+          href={`/${lang}/posts`}
           className="font-bold text-2xl underline hover:opacity-50 duration-75 flex items-end whitespace-nowrap gap-x-3"
         >
           <span>
             <ArrowLeft />
           </span>
-          Back To All Posts
+          {page.posts.backToAllPosts}
         </Link>
       )}
       <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 px-4 py-9 min-w-full">
@@ -43,7 +53,7 @@ export default function Home({ searchParams }: HomeProps) {
             </>
           }
         >
-          <PostsSuspense keyWord={searchParams?.search} />
+          <PostsSuspense keyWord={searchParams?.search} lang={lang} />
         </Suspense>
       </div>
     </>
@@ -52,9 +62,10 @@ export default function Home({ searchParams }: HomeProps) {
 
 interface PostsSuspenseProps {
   keyWord?: string;
+  lang: Locale;
 }
 
-async function PostsSuspense({ keyWord }: PostsSuspenseProps) {
+async function PostsSuspense({ keyWord, lang }: PostsSuspenseProps) {
   const posts: TPost[] = await getPosts(undefined, keyWord);
   const users: TUser[] = await getUsers();
 
@@ -62,7 +73,9 @@ async function PostsSuspense({ keyWord }: PostsSuspenseProps) {
     return (
       <div className="absolute top-0 right-0 left-0 bottom-0">
         <h1 className="font-bold text-xl md:text-2xl lg:text-3xl sm:whitespace-nowrap mx-auto text-center mt-14">
-          No posts with keyWord {keyWord} found!
+          {lang === "en"
+            ? `No posts with keyWord ${keyWord} found!`
+            : `პოსტი საკვანძო სიტყვა ${keyWord} - ით არ მოიძებნა`}
         </h1>
       </div>
     );
@@ -72,9 +85,8 @@ async function PostsSuspense({ keyWord }: PostsSuspenseProps) {
     <>
       {posts.map((post) => {
         const user = users.find((user) => user.id === post.userId)!;
-        return <PostCard key={post.id} post={post} user={user} />;
+        return <PostCard key={post.id} post={post} user={user} lang={lang} />;
       })}
-      ;
     </>
   );
 }
