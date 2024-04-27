@@ -15,7 +15,7 @@ interface HomeCardProps {
 
 export function HomeCard({ title, description, attachment }: HomeCardProps) {
   return (
-    <Card className="max-w-[60%] mt-9 text-left even:self-start odd:self-end ">
+    <Card className="w-full sm:max-w-[60%] mt-9 text-left sm:even:self-start sm:odd:self-end ">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
@@ -23,7 +23,7 @@ export function HomeCard({ title, description, attachment }: HomeCardProps) {
         <CardDescription className="text-lg">{description}</CardDescription>
       </CardContent>
       {attachment && (
-        <CardFooter className="flex justify-end gap-x-2">
+        <CardFooter className="flex justify-end gap-x-2 truncate max-w-full">
           Visit -{" "}
           <a
             className="text-blue-500 underline"

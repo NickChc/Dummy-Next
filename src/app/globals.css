@@ -75,7 +75,6 @@
   }
 }
 
-
 @layer utilities {
   .line-clamp-10 {
     overflow: hidden;
@@ -83,4 +82,23 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: gray;
+}
+
+::-webkit-scrollbar-track {
+  width: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 90%;
+  border-radius: 12px;
+  background-color: rgb(99, 99, 99);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(53, 53, 53);
 }

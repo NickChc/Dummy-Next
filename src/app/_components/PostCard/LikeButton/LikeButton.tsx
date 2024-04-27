@@ -35,7 +35,7 @@ export function LikeButton({ postId, reactions }: LikeButtonProps) {
   useEffect(() => {
     const liked = localStorage.getItem("liked_posts");
     setIsLiked(liked ? JSON.parse(liked).includes(postId) : false);
-  }, []);
+  }, [postId]);
 
   return (
     <>

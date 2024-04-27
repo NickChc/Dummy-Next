@@ -18,7 +18,7 @@ interface PostCardProps {
 
 export function PostCard({ post, user }: PostCardProps) {
   return (
-    <Card className="relative">
+    <Card className="relative my-1">
       <div className="flex-grow min-h-80 h-[75%]">
         <CardHeader>
           <div>
@@ -43,7 +43,7 @@ export function PostCard({ post, user }: PostCardProps) {
         </CardContent>
       </div>
       <CardFooter>
-        <div className="w-full flex items-center justify-between mt-9">
+        <div className="w-full flex items-center justify-start gap-x-3 mt-9 mb-2">
           {post.tags.map((tag) => {
             return (
               <Link key={tag} href={`/posts/${tag}`} className="underline m-1">

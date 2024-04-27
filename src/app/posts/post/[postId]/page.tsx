@@ -17,7 +17,7 @@ export default async function PostPage({ params: { postId } }: PostPageProps) {
   const comments: TComment[] = await getComments(postId);
 
   return (
-    <div className="w-[80%] flex flex-col bg-white">
+    <div className="w-[80%] flex flex-col bg-white dark:bg-blue-900 rounded-b-lg overflow-hidden mb-6">
       <PostCard post={post} user={user} />
       <hr className="w-full" />
       {comments.length === 0 ? (

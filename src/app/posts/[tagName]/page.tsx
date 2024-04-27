@@ -17,7 +17,7 @@ export default function TagNamePosts({
 }: PostTagPageProps) {
   return (
     <>
-      <PageHeader>POSTS ABOUT {tagName}</PageHeader>
+      <PageHeader>POSTS ABOUT - {tagName}</PageHeader>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 px-4 py-9 min-w-full">
         <Suspense
           fallback={

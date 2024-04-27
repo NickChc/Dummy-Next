@@ -1,10 +1,5 @@
 import { TComment } from "@/@types/general";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface CommentCardProps {
   comment: TComment;
@@ -12,7 +7,7 @@ interface CommentCardProps {
 
 export function CommentCard({ comment }: CommentCardProps) {
   return (
-    <Card>
+    <Card className="dark:rounded-none">
       <CardHeader>
         <CardTitle>{comment.user.username}</CardTitle>
       </CardHeader>
