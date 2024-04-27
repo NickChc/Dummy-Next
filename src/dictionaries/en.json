@@ -1,0 +1,12 @@
+{
+  "page": {
+    "home": {
+      "home": "HOME"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "posts": "Posts",
+    "users": "Users"
+  }
+}

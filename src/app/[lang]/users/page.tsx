@@ -1,9 +1,9 @@
 import { TUser } from "@/@types/general";
-import { PageHeader } from "@/app/_components/PageHeader";
-import { UserCard } from "@/app/users/_components/UserCard";
+import { PageHeader } from "@/app/[lang]/_components/PageHeader";
+import { UserCard } from "@/app/[lang]/users/_components/UserCard";
 import { Suspense } from "react";
 import { UserCardSkeleton } from "./_components/UserCard/UserCardSkeleton";
-import { getUsers } from "@/app/_api/getUsers";
+import { getUsers } from "@/app/[lang]/_api/getUsers";
 
 export default async function UsersPage() {
   const users = await getUsers();

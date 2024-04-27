@@ -1,10 +1,10 @@
-import { PageHeader } from "@/app/_components/PageHeader";
+import { PageHeader } from "@/app/[lang]/_components/PageHeader";
 import { TPost, TUser } from "@/@types/general";
-import { PostCard, PostCardSkeleton } from "@/app/_components/PostCard";
-import { getUsers } from "@/app/_api/getUsers";
-import { getPosts } from "@/app/_api/getPosts";
+import { PostCard, PostCardSkeleton } from "@/app/[lang]/_components/PostCard";
+import { getUsers } from "@/app/[lang]/_api/getUsers";
+import { getPosts } from "@/app/[lang]/_api/getPosts";
 import { Suspense } from "react";
-import { PostsSearchbar } from "@/app/posts/_components/PostsSearchbar";
+import { PostsSearchbar } from "@/app/[lang]/posts/_components/PostsSearchbar";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 

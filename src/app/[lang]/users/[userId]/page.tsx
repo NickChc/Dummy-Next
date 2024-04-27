@@ -1,9 +1,9 @@
 import { TPost, TUser } from "@/@types/general";
-import { getUsers } from "@/app/_api/getUsers";
-import { PostCard } from "@/app/_components/PostCard";
+import { getUsers } from "@/app/[lang]/_api/getUsers";
+import { PostCard } from "@/app/[lang]/_components/PostCard";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getPosts } from "@/app/_api/getPosts";
+import { getPosts } from "@/app/[lang]/_api/getPosts";
 
 interface UserPageProps {
   params: {

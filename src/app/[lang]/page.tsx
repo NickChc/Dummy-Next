@@ -1,10 +1,19 @@
-import { PageHeader } from "@/app/_components/PageHeader";
-import { HomeCard } from "@/app/_components/HomeCard";
+import { PageHeader } from "@/app/[lang]/_components/PageHeader";
+import { HomeCard } from "@/app/[lang]/_components/HomeCard";
+import { Locale } from "../../../i18n.config";
+import { getDictionaries } from "@/lib/dictionary";
+import { LangSelect } from "@/app/[lang]/_components/LangSelect";
 
-export default function HomePage() {
+interface HomePageProps {
+  params: { lang: Locale };
+}
+
+export default async function HomePage({ params: { lang } }: HomePageProps) {
+  const { page } = await getDictionaries(lang);
+
   return (
     <div className="w-[80%] text-center flex flex-col items-center pb-4">
-      <PageHeader>HOME</PageHeader>
+      <PageHeader>{page.home.home}</PageHeader>
       <HomeCard
         title="Welcome to Dummy Next"
         description="This app is my introduction to next.js It showcases general features
@@ -20,6 +29,7 @@ export default function HomePage() {
         title="Why I made this"
         description="Well, I made this app simply to train myself in next.js practice. I used layouts, error pages, dynamic routes, params and searchParams, SSR and client components. I know it is just a begining of next.js I have just begun. 😊"
       />
+      <LangSelect />
     </div>
   );
 }

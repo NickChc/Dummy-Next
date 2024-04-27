@@ -1,9 +1,9 @@
 import { TComment, TPost, TUser } from "@/@types/general";
-import { getPosts } from "@/app/_api/getPosts";
-import { PostCard } from "@/app/_components/PostCard";
-import { getUsers } from "@/app/_api/getUsers";
-import { getComments } from "@/app/_api/getComments";
-import { CommentCard } from "@/app/_components/CommentCard";
+import { getPosts } from "@/app/[lang]/_api/getPosts";
+import { PostCard } from "@/app/[lang]/_components/PostCard";
+import { getUsers } from "@/app/[lang]/_api/getUsers";
+import { getComments } from "@/app/[lang]/_api/getComments";
+import { CommentCard } from "@/app/[lang]/_components/CommentCard";
 
 interface PostPageProps {
   params: {

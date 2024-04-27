@@ -6,10 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LikeButton } from "@/app/_components/PostCard/LikeButton";
+import { LikeButton } from "@/app/[lang]/_components/PostCard/LikeButton";
 import Link from "next/link";
 import Image from "next/image";
-import { ViewMoreLink } from "@/app/_components/PostCard/ViewMoreLink";
+import { ViewMoreLink } from "@/app/[lang]/_components/PostCard/ViewMoreLink";
 
 interface PostCardProps {
   post: TPost;

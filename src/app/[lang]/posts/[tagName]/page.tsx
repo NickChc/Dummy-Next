@@ -1,8 +1,8 @@
 import { TPost, TUser } from "@/@types/general";
-import { getPosts } from "@/app/_api/getPosts";
-import { getUsers } from "@/app/_api/getUsers";
-import { PageHeader } from "@/app/_components/PageHeader";
-import { PostCard, PostCardSkeleton } from "@/app/_components/PostCard";
+import { getPosts } from "@/app/[lang]/_api/getPosts";
+import { getUsers } from "@/app/[lang]/_api/getUsers";
+import { PageHeader } from "@/app/[lang]/_components/PageHeader";
+import { PostCard, PostCardSkeleton } from "@/app/[lang]/_components/PostCard";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
