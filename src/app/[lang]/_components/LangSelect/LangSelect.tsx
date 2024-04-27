@@ -1,10 +1,21 @@
 "use client";
 
-import { i18n } from "../../../../../i18n.config";
+import { Locale, i18n } from "../../../../../i18n.config";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function LangSelect() {
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+interface LangSelectProps {
+  lang: Locale;
+}
+
+export function LangSelect({ lang }: LangSelectProps) {
   const pathname = usePathname();
 
   function redirectPathname(locale: string) {
@@ -15,19 +26,32 @@ export function LangSelect() {
   }
 
   return (
-    <ul className="flex gap-x-3">
-      {i18n.locales.map((loc) => {
-        return (
-          <li key={loc}>
-            <Link
-              href={redirectPathname(loc)}
-              className="rounded-md border bg-black px-3 py-2 text-white"
+    <DropdownMenu>
+      <DropdownMenuTrigger className="font-semibold bg-black text-white rounded-lg p-2">
+        {lang.toUpperCase()}
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="ml-1">
+        {i18n.locales.map((loc) => {
+          return (
+            <DropdownMenuItem
+              key={loc}
+              asChild
+              className={
+                lang === loc
+                  ? "opacity-50 cursor-default"
+                  : "hover:opacity-70 cursor-pointer"
+              }
             >
-              {loc}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+              <Link
+                href={redirectPathname(loc)}
+                className={`ml-3 font-semibold`}
+              >
+                {loc}
+              </Link>
+            </DropdownMenuItem>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
